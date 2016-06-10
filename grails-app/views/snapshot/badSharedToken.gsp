@@ -49,7 +49,7 @@
               </g:if>
             </ul>
 
-            <p>Please see the <a href="http://wiki.aaf.edu.au/tech-info/attributes/auedupersonsharedtoken">AAF Wiki</a> for information on token requirements.</p>
+            <p>Please see the <a href="http://hkafaccessfed.github.io/info/attributes/auEduPersonSharedToken">HKAF Wiki</a> for information on token requirements.</p>
           </div>
 
           <p><g:message code="branding.application.supportdesk"/></p>

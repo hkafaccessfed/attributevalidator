@@ -6,16 +6,17 @@ class Snapshot {
 
   private static final affiliations = ['faculty', 'student', 'staff', 'employee', 'member', 'affiliate', 'alum', 'library-walk-in']
 
-  public static final coreAttributes = ['cn', 'mail', 'auEduPersonSharedToken', 'displayName', 'eduPersonAssurance', 'eduPersonAffiliation', 
+// Move SharedToken to optional
+  public static final coreAttributes = ['cn', 'mail', 'displayName', 'eduPersonAssurance', 'eduPersonAffiliation', 
                                         'eduPersonScopedAffiliation', 'eduPersonEntitlement', 'eduPersonTargetedID', 
                                         'o', 'authenticationMethod']
-  public static final optionalAttributes = ['givenName', 'surname', 'mobileNumber', 'telephoneNumber', 'postalAddress', 'organizationalUnit', 
+  public static final optionalAttributes = ['auEduPersonSharedToken', 'givenName', 'surname', 'mobileNumber', 'telephoneNumber', 'postalAddress', 'organizationalUnit', 
                                             'schacHomeOrganization', 'schacHomeOrganizationType']
 
   Date dateCreated
   static belongsTo = [subject:aaf.base.identity.Subject]
 
-  // AAF attributes
+  // HKAF attributes
   
   // Core
   String cn                             // oid:2.5.4.3
@@ -43,7 +44,7 @@ class Snapshot {
   static constraints = {
     cn (nullable:true, blank:false, validator: validCn)
     mail (nullable:true, validator: validMail)
-    auEduPersonSharedToken (nullable:true, blank:false, size: 27..27, matches: '^[A-Za-z0-9_-]+$', validator: {if(!it) return false })
+    auEduPersonSharedToken (nullable:true, validator: validauEduPersonSharedToken)
     displayName (nullable:true, blank:false, validator: {if(!it) return false })
     eduPersonAssurance (nullable:true, blank:false, validator: validEduPersonAssurance)
     eduPersonAffiliation (nullable:true, blank:false, validator: validEduPersonAffiliation)
@@ -63,6 +64,17 @@ class Snapshot {
     // Regex adapted from http://stackoverflow.com/a/106223 for RFC compliance, ensures at least xyz.com as opposed to documented which allows xyz
     schacHomeOrganization (nullable:true, blank:true, matches: "^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\\-]*[a-zA-Z0-9])\\.)+([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\\-]*[A-Za-z0-9])\$")
     schacHomeOrganizationType (nullable:true, blank:true, matches: '^urn:.+$')
+  }
+
+  static validauEduPersonSharedToken = { value, obj ->
+    if(value) {
+
+    if(value.length() != 27) { return false }
+
+    String regex = '^[A-Za-z0-9_-]+$'
+    Snapshot.attributeMatches(regex,value)
+    }
+    else return true
   }
 
   static validCn = { value, obj ->

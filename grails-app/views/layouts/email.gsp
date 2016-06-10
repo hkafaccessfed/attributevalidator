@@ -215,13 +215,13 @@
                                 <tr>
                                     <td valign="top">
                                         <div >
-                                           An important message from the Australian Access Federation<br> 
+                                           An important message from the Hong Kong Access Federation<br> 
                                            [APPLICATION NAME]
                                         </div>
                                       </td>
                                       <td valign="top" width="190">
                                         <div >
-                                            Do you need help with the Federation?<br /><a href="http://support.aaf.edu.au" target="_blank">Access the AAF Support service</a>.
+                                            Do you need help with the Federation?<br /><a href="mailto://support@hkaf.edu.hk" target="_blank"> email the HKAF Support service</a>.
                                           </div>
                                       </td>
                                   </tr>
@@ -272,7 +272,7 @@
                                                 <tr>
                                                     <td colspan="2" valign="middle" id="social" style="background-color:#FAFAFA; border:0;">
                                                         <div style="text-align:center;">
-                                                            &nbsp;<a href="http://twitter.com/ausaccessfed" style="font-weight: bold; color:#E36C0A;">Follow on Twitter</a> | <a href="http://www.facebook.com/ausaccessfed" style="font-weight: bold; color:#E36C0A;">Friend on Facebook</a> | <a href="https://support.aaf.edu.au" style="font-weight: bold; color:#E36C0A;">Get AAF Support</a>&nbsp;
+                                                            &nbsp;<a href="mailto://support.hkaf.edu.hk" style="font-weight: bold; color:#E36C0A;">Get HKAF Support</a>&nbsp;
                                                         </div>
                                                     </td>
                                                 </tr>

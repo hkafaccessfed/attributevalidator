@@ -23,7 +23,7 @@
           <th>Required format and further details</th>
         </tr>
         <g:each in="${snapshot.coreAttributes.sort{it}}" var="attr">
-          <g:render template="/templates/attribute" model="[field:attr, referenceURL:"http://wiki.aaf.edu.au/tech-info/attributes/${attr.toLowerCase()}"]" />
+          <g:render template="/templates/attribute" model="[field:attr, referenceURL:"http://hkafaccessfed.github.io/info/attributes/${attr.toLowerCase()}"]" />
         </g:each>
 
         <tr>
@@ -36,7 +36,7 @@
           <th>Required format and further details</th>
         </tr>
         <g:each in="${snapshot.optionalAttributes.sort{it}}" var="attr">
-          <g:render template="/templates/attribute" model="[field:attr, referenceURL:"http://wiki.aaf.edu.au/tech-info/attributes/${attr.toLowerCase()}"]" />
+          <g:render template="/templates/attribute" model="[field:attr, referenceURL:"http://hkafaccessfed.github.io/info/attributes/${attr.toLowerCase()}"]" />
         </g:each>
       </tbody>
     </table>
